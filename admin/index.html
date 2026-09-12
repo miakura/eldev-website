@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>ELDEV Admin</title>
+    <link rel="stylesheet" href="/admin/admin.css" />
+  </head>
+  <body>
+    <div id="loginView" class="auth-screen">
+      <form id="loginForm" class="auth-card">
+        <div class="brand">ELDEV <span>Admin</span></div>
+        <p>Войдите, чтобы редактировать контент, кейсы, SEO, цены и логотип.</p>
+        <label>
+          Логин
+          <input id="usernameInput" type="text" autocomplete="username" required />
+        </label>
+        <label>
+          Пароль
+          <input id="passwordInput" type="password" autocomplete="current-password" required />
+        </label>
+        <button type="submit">Войти</button>
+        <p id="loginError" class="error" hidden></p>
+      </form>
+    </div>
+
+    <div id="appView" class="app" hidden>
+      <header class="topbar">
+        <button type="button" id="navToggle" class="nav-toggle" aria-label="Разделы" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="brand">ELDEV <span>Admin</span></div>
+        <div class="topbar-actions">
+          <a href="/" target="_blank" rel="noopener">Сайт</a>
+          <button type="button" id="logoutBtn" class="ghost">Выйти</button>
+        </div>
+      </header>
+
+      <div class="admin-shell">
+        <aside id="adminNav" class="admin-nav" aria-label="Разделы админки">
+          <label class="nav-select-wrap">
+            Раздел
+            <select id="sectionSelect" aria-label="Выбор раздела">
+              <option value="branding">Бренд и логотип</option>
+              <option value="hero">Hero</option>
+              <option value="about">Обо мне</option>
+              <option value="services">Услуги и цены</option>
+              <option value="projects">Кейсы</option>
+              <option value="capabilities">Capabilities / Process</option>
+              <option value="contact">Контакты и footer</option>
+              <option value="seo">SEO</option>
+              <option value="leads">Заявки</option>
+            </select>
+          </label>
+          <nav class="nav-list">
+            <button type="button" class="nav-item is-active" data-section="branding">Бренд и логотип</button>
+            <button type="button" class="nav-item" data-section="hero">Hero</button>
+            <button type="button" class="nav-item" data-section="about">Обо мне</button>
+            <button type="button" class="nav-item" data-section="services">Услуги и цены</button>
+            <button type="button" class="nav-item" data-section="projects">Кейсы</button>
+            <button type="button" class="nav-item" data-section="capabilities">Capabilities / Process</button>
+            <button type="button" class="nav-item" data-section="contact">Контакты и footer</button>
+            <button type="button" class="nav-item" data-section="seo">SEO</button>
+            <button type="button" class="nav-item" data-section="leads">Заявки</button>
+          </nav>
+        </aside>
+
+        <div class="admin-backdrop" id="navBackdrop" hidden></div>
+
+        <main class="admin-content layout">
+          <section class="panel is-active" data-panel="branding">
+            <h2>Бренд и логотип</h2>
+            <p class="hint">Марки, marquee и URL логотипа для шапки сайта.</p>
+            <div class="row">
+              <label>Текст marquee<input id="brandMarquee" /></label>
+              <label>URL логотипа<input id="brandLogoUrl" placeholder="/logo.svg" /></label>
+            </div>
+            <div class="row">
+              <label>Текст логотипа<input id="brandLogoText" /></label>
+              <label>Акцент логотипа<input id="brandLogoAccent" /></label>
+            </div>
+          </section>
+
+          <section class="panel" data-panel="hero" hidden>
+            <h2>Hero</h2>
+            <label>Eyebrow<input id="heroEyebrow" /></label>
+            <label>Статус доступности<input id="heroAvailability" /></label>
+            <label>Заголовок (до акцента)<input id="heroBefore" /></label>
+            <label>Акцент заголовка<input id="heroAccent" /></label>
+            <label>Заголовок (после акцента)<input id="heroAfter" /></label>
+            <label>Подзаголовок<textarea id="heroLead" rows="4"></textarea></label>
+            <div class="row">
+              <label>CTA primary<input id="heroCtaPrimary" /></label>
+              <label>CTA secondary<input id="heroCtaSecondary" /></label>
+            </div>
+            <label>Подсказка сцены<input id="heroHint" /></label>
+            <details class="fold" open>
+              <summary>Статистика hero</summary>
+              <div id="statsFields" class="stack"></div>
+            </details>
+            <details class="fold">
+              <summary>Experience</summary>
+              <div id="experienceFields" class="stack"></div>
+            </details>
+            <details class="fold">
+              <summary>Заголовки секций сайта</summary>
+              <div class="row">
+                <label>Services eyebrow<input id="secServicesEyebrow" /></label>
+                <label>Services title<input id="secServicesTitle" /></label>
+              </div>
+              <label>Services lead<textarea id="secServicesLead" rows="2"></textarea></label>
+              <div class="row">
+                <label>Projects eyebrow<input id="secProjectsEyebrow" /></label>
+                <label>Projects title<input id="secProjectsTitle" /></label>
+              </div>
+              <label>Projects lead<textarea id="secProjectsLead" rows="2"></textarea></label>
+              <label>Contact eyebrow<input id="secContactEyebrow" /></label>
+            </details>
+          </section>
+
+          <section class="panel" data-panel="about" hidden>
+            <h2>Обо мне</h2>
+            <label>About eyebrow<input id="aboutEyebrow" /></label>
+            <div class="row">
+              <label>Имя<input id="aboutName" /></label>
+              <label>Заголовок<input id="aboutTitle" /></label>
+            </div>
+            <label>Абзац 1<textarea id="aboutP1" rows="3"></textarea></label>
+            <label>Абзац 2<textarea id="aboutP2" rows="3"></textarea></label>
+            <label>Абзац 3<textarea id="aboutP3" rows="3"></textarea></label>
+            <div class="photo-card">
+              <h3>Портрет</h3>
+              <img id="previewAboutPhoto" alt="" />
+              <input type="file" accept="image/jpeg,image/png,image/webp,image/gif" data-slot="aboutPhoto" />
+            </div>
+          </section>
+
+          <section class="panel" data-panel="services" hidden>
+            <h2>Услуги и цены</h2>
+            <div id="servicesFields" class="stack"></div>
+            <details class="fold" open>
+              <summary>Offers strip</summary>
+              <div class="row">
+                <label>Kicker<input id="offersKicker" /></label>
+                <label>Заголовок<input id="offersTitle" /></label>
+              </div>
+              <label>Текст<textarea id="offersLead" rows="2"></textarea></label>
+            </details>
+            <details class="fold" open>
+              <summary>Баннер рассрочки</summary>
+              <div class="row">
+                <label>Kicker<input id="installmentKicker" /></label>
+                <label>Заголовок<input id="installmentTitle" /></label>
+              </div>
+              <label>Текст<textarea id="installmentText" rows="2"></textarea></label>
+            </details>
+          </section>
+
+          <section class="panel" data-panel="projects" hidden>
+            <h2>Кейсы</h2>
+            <p class="hint">URL хранится, но на публичном сайте карточки не кликабельны.</p>
+            <div id="projectsFields" class="stack"></div>
+            <button type="button" id="addProjectBtn" class="ghost">Добавить кейс</button>
+          </section>
+
+          <section class="panel" data-panel="capabilities" hidden>
+            <h2>Capabilities / Process / Stack</h2>
+            <div id="capabilitiesFields" class="stack"></div>
+            <button type="button" id="addCapabilityBtn" class="ghost">Добавить capability</button>
+            <h3 class="subhead">Process</h3>
+            <div id="processFields" class="stack"></div>
+            <button type="button" id="addProcessBtn" class="ghost">Добавить шаг</button>
+            <h3 class="subhead">Stack (через запятую)</h3>
+            <label><input id="stackInput" /></label>
+          </section>
+
+          <section class="panel" data-panel="contact" hidden>
+            <h2>Контакты и footer</h2>
+            <div class="row">
+              <label>Telegram URL<input id="telegramUrl" /></label>
+              <label>Telegram handle<input id="telegramHandle" /></label>
+            </div>
+            <div class="row">
+              <label>Телефон (отображение)<input id="phoneDisplay" /></label>
+              <label>Телефон (href)<input id="phoneHref" /></label>
+            </div>
+            <label>Заголовок CTA<input id="contactTitle" /></label>
+            <label>Текст CTA<textarea id="contactText" rows="3"></textarea></label>
+            <label>Кнопка CTA<input id="contactCta" /></label>
+            <h3 class="subhead">Footer</h3>
+            <div class="row">
+              <label>Левая строка<input id="footerLeft" /></label>
+              <label>Доступность<input id="footerAvailability" /></label>
+            </div>
+          </section>
+
+          <section class="panel" data-panel="seo" hidden>
+            <h2>SEO</h2>
+            <label>Title<input id="seoTitle" /></label>
+            <label>Description<textarea id="seoDescription" rows="3"></textarea></label>
+            <label>Keywords<input id="seoKeywords" /></label>
+            <label>OG image URL<input id="seoOgImage" /></label>
+            <div class="row">
+              <label>Google verification<input id="seoGoogle" placeholder="пусто до кода" /></label>
+              <label>Yandex verification<input id="seoYandex" placeholder="пусто до кода" /></label>
+            </div>
+          </section>
+
+          
+          <section class="panel" data-panel="leads" hidden>
+            <h2>Заявки</h2>
+            <p class="hint">Заявки с формы «Оставить заявку» на сайте. Новые сверху.</p>
+            <div class="leads-toolbar">
+              <button type="button" id="leadsRefreshBtn" class="ghost">Обновить</button>
+              <span id="leadsCount" class="hint"></span>
+            </div>
+            <div id="leadsList" class="leads-list"></div>
+            <p id="leadsEmpty" class="hint" hidden>Заявок пока нет.</p>
+          </section>
+        </main>
+      </div>
+
+      <div class="savebar">
+        <p id="saveStatus">Готово к сохранению</p>
+        <button type="button" id="saveBtn">Сохранить</button>
+      </div>
+    </div>
+
+    <div id="toast" class="toast" hidden role="status" aria-live="polite"></div>
+
+    <script src="/admin/admin.js" type="module"></script>
+  </body>
+</html>
