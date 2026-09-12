@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - '_assembly/**'
+      - '_assembly/**/manifest.json'
 jobs:
   assemble:
     runs-on: ubuntu-latest
@@ -18,5 +18,5 @@ jobs:
           git config user.name "eldev-assemble"
           git config user.email "assemble@users.noreply.github.com"
           git add -A
-          git diff --staged --quiet || git commit -m "Assemble asset-blobs from chunks"
+          git diff --staged --quiet || git commit -m "Assemble files from _assembly chunks"
           git push
