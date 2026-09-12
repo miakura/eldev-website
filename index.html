@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="https://eldev.website/" />
+    <meta
+      name="description"
+      content="Разработка сайтов, лендингов, Telegram-ботов и 3D/WebGL. Full-stack на Python и Go. 5+ лет, 50+ кейсов."
+    />
+    <meta name="keywords" content="написание сайтов, разработка сайтов, создание сайтов, разработка телеграм ботов, telegram bot, 3д сайты, WebGL, three.js, Python, Go" />
+    <meta name="theme-color" content="#05070a" />
+    <meta name="eldev-build" content="no-design-20260912" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:url" content="https://eldev.website/" />
+    <meta property="og:site_name" content="ELDEV" />
+    <meta property="og:title" content="ELDEV — full-stack разработка на Python и Go · сайты, боты, 3D" />
+    <meta
+      property="og:description"
+      content="Разработка сайтов, лендингов, Telegram-ботов и 3D/WebGL. Full-stack на Python и Go. 5+ лет, 50+ кейсов."
+    />
+    <meta property="og:image" content="https://eldev.website/og/og-cover.png?v=20260912desc2" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ELDEV — full-stack разработка на Python и Go" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ELDEV — full-stack разработка на Python и Go · сайты, боты, 3D" />
+    <meta
+      name="twitter:description"
+      content="Разработка сайтов, лендингов, Telegram-ботов и 3D/WebGL. Full-stack на Python и Go. 5+ лет, 50+ кейсов."
+    />
+    <meta name="twitter:image" content="https://eldev.website/og/og-cover.png?v=20260912desc2" />
+    <title>ELDEV — full-stack разработка на Python и Go · сайты, боты, 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json" id="jsonLd"></script>
+  </head>
+  <body class="experience">
+    <canvas id="worldCanvas" class="world-canvas" aria-label="Интерактивная 3D-сцена ELDEV"></canvas>
+    <div class="world-vignette" aria-hidden="true"></div>
+    <div class="world-grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="header-marquee" aria-hidden="true">
+        <div class="header-marquee-track">
+          <span>ELDEV</span><span>ELDEV</span><span>ELDEV</span><span>ELDEV</span>
+          <span>ELDEV</span><span>ELDEV</span><span>ELDEV</span><span>ELDEV</span>
+        </div>
+      </div>
+      <div class="shell">
+        <a class="logo" href="#top" aria-label="ELDEV">
+          <img class="logo-mark" src="/logo.svg" alt="ELDEV" width="148" height="32" />
+        </a>
+        <nav class="nav-desktop" aria-label="Основная навигация">
+          <a href="#uslugi">Услуги</a>
+          <a href="#projects">Проекты</a>
+          <a href="#about">Обо мне</a>
+          <a href="#contact">Контакт</a>
+          <a class="nav-cta" href="https://t.me/pashaevel" target="_blank" rel="noopener noreferrer">Telegram</a>
+        </nav>
+        <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" id="navToggle">
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="nav-mobile" id="navMobile" hidden>
+      <nav aria-label="Мобильная навигация">
+        <a href="#uslugi">Услуги</a>
+        <a href="#projects">Проекты</a>
+        <a href="#about">Обо мне</a>
+        <a href="#contact">Контакт</a>
+        <a href="https://t.me/pashaevel" target="_blank" rel="noopener noreferrer">Telegram</a>
+      </nav>
+    </div>
+
+    <main id="top">
+      <section class="stage stage-hero" data-stage="0">
+        <div class="panel panel-hero reveal">
+          <div class="eyebrow">3D-first portfolio</div>
+          <div class="hero-availability"><i></i><span data-hero-availability>Открыт к проектам · Full-stack</span></div>
+          <h1>
+            Сайт как
+            <span class="gradient-text">3D-модель</span>
+            — full-stack на Python и Go
+          </h1>
+          <p class="hero-lead">
+            5+ лет · 50+ кейсов · разработка сайтов · Telegram-боты · 3D/WebGL · Python · Go · production в международной компании.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://t.me/pashaevel" target="_blank" rel="noopener noreferrer"
+              >Обсудить задачу</a
+            >
+            <a class="btn btn-ghost" href="#projects">К реальным проектам</a>
+          </div>
+          <div class="hero-stats" id="heroStats"></div>
+          <p class="stage-hint">Двигайте курсор · листайте — сцена отвечает</p>
+        </div>
+      </section>
+
+      <section class="stage stage-services" id="uslugi" data-stage="1">
+        <div class="panel reveal">
+          <div class="eyebrow">Services</div>
+          <h2 class="section-title">Услуги разработки</h2>
+          <p class="section-lead">
+            Написание сайтов — от 50 000 ₽, Telegram-боты — от 15 000 ₽.
+            Также 3D/WebGL и сопровождение после запуска.
+          </p>
+          <div id="servicesList" class="services-grid"></div>
+          <div class="offers-strip">
+            <div class="offers-head">
+              <p class="offers-kicker">Также беру</p>
+              <h3 class="offers-title">Продвижение · доработка · ребрендинг · поддержка</h3>
+              <p class="offers-lead">
+                Если сайт уже есть — усилю трафик, допишу функциональность, обновлю визуальный язык или возьму на
+                сопровождение: от 3 месяцев, 7 000 ₽ в месяц.
+              </p>
+            </div>
+            <div id="offersList" class="offers-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stage stage-projects" id="projects" data-stage="2">
+        <div class="panel reveal">
+          <div class="eyebrow">Projects</div>
+          <h2 class="section-title">Реальные кейсы</h2>
+          <p class="section-lead">
+            Шесть боевых сайтов в продакшене. Превью и описание — без перехода на внешние URL.
+          </p>
+          <div id="projectsList" class="projects-slot"></div>
+        </div>
+      </section>
+
+      <section class="stage stage-about" id="about" data-stage="3">
+        <div class="panel reveal">
+          <div class="eyebrow">About</div>
+          <div class="about-layout">
+            <div class="about-photo" data-photo="about-primary" data-label="Portrait">
+              <img src="/photos/about-portrait.webp" alt="ELDEV" width="480" height="600" loading="lazy" decoding="async" />
+            </div>
+            <div class="about-main">
+              <p class="about-name" id="aboutName">ELDEV</p>
+              <h2 class="section-title" id="aboutTitle">Full-stack разработчик: Python, Go и 3D UI</h2>
+              <div class="about-copy">
+                <p>
+                  Делаю сайты, Telegram-ботов и interactive/WebGL-интерфейсы. Backend на Python и Go, frontend с сильной
+                  визуальной подачей.
+                </p>
+                <p>
+                  5+ лет в разработке, 50+ кейсов, работаю в международной компании. Беру задачи от лендинга до сервиса с
+                  API и админкой.
+                </p>
+              </div>
+              <div class="capability-chips" id="capabilityChips"></div>
+              <div class="about-facts" id="experienceGrid"></div>
+              <div class="process-list" id="processList" aria-label="Процесс работы"></div>
+              <div class="stack-row" id="stackRow" aria-label="Стек"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stage stage-contact" id="contact" data-stage="4">
+        <div class="panel panel-contact reveal">
+          <div class="eyebrow">Contact</div>
+          <h2>Нужен сайт, бот или 3D-интерфейс — напишите</h2>
+          <p>Коротко опишите задачу в Telegram или оставьте заявку — отвечу по срокам, стеку и формату работы.</p>
+          <div class="contact-layout">
+            <div class="contact-col">
+              <div class="cta-actions">
+                <a class="btn btn-primary" href="https://t.me/pashaevel" target="_blank" rel="noopener noreferrer"
+                  >Написать в Telegram</a
+                >
+                <a class="contact-link" href="https://t.me/pashaevel" target="_blank" rel="noopener noreferrer">
+                  <span>
+                    <small>Telegram</small>
+                    <strong>@pashaevel</strong>
+                  </span>
+                  <span>↗</span>
+                </a>
+                <a class="contact-link" href="tel:+79372656200">
+                  <span>
+                    <small>Телефон</small>
+                    <strong>+7 937 265-62-00</strong>
+                  </span>
+                  <span>↗</span>
+                </a>
+              </div>
+            </div>
+
+            <form class="lead-form" id="leadForm" novalidate>
+              <h3 class="lead-title">Оставить заявку</h3>
+              <p class="lead-lead">ФИО, телефон, соцсеть и описание задачи — перезвоню или напишу.</p>
+              <label class="lead-field">
+                <span>ФИО</span>
+                <input id="leadName" name="name" type="text" autocomplete="name" maxlength="120" required placeholder="Иван Иванов" />
+              </label>
+              <label class="lead-field">
+                <span>Номер телефона</span>
+                <input
+                  id="leadPhone"
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  inputmode="tel"
+                  maxlength="18"
+                  required
+                  placeholder="+7 (900) 000-00-00"
+                  data-phone-mask="+7 (999) 999-99-99"
+                />
+              </label>
+              <label class="lead-field">
+                <span>Соцсеть</span>
+                <input id="leadSocial" name="social" type="text" maxlength="200" required placeholder="@telegram или ссылка" />
+              </label>
+              <label class="lead-field">
+                <span>Описание задачи</span>
+                <textarea
+                  id="leadTask"
+                  name="task"
+                  rows="4"
+                  maxlength="2000"
+                  required
+                  placeholder="Что нужно сделать: сайт, бот, 3D, сроки, ссылки…"
+                ></textarea>
+              </label>
+              <label class="lead-honeypot" aria-hidden="true">
+                <span>Сайт</span>
+                <input id="leadWebsite" name="website" type="text" tabindex="-1" autocomplete="off" />
+              </label>
+              <button type="submit" class="btn btn-primary" id="leadSubmit">Отправить заявку</button>
+              <p class="lead-status" id="leadStatus" role="status"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-row">
+        <div>© 2026 ELDEV · сайты · боты · 3D</div>
+        <div class="footer-nav">
+          <a href="#uslugi">Услуги</a>
+          <a href="#projects">Проекты</a>
+          <a href="#about">Обо мне</a>
+          <a href="#contact">Контакт</a>
+        </div>
+        <div>Available for new projects</div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
