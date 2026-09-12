@@ -12,16 +12,35 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Download bundle and force-push main
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Import tree from bundle
         env:
           BUNDLE_URL: https://tmpfiles.org/dl/1789220641.43d0a9d1d3e2081f/w6wkPvLBWdjN/eldev-full.bundle.txt
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
           curl -fsSL -o /tmp/eldev.bundle "$BUNDLE_URL"
           git bundle verify /tmp/eldev.bundle
-          rm -rf /tmp/eldev-mirror
-          git clone --mirror /tmp/eldev.bundle /tmp/eldev-mirror
-          cd /tmp/eldev-mirror
-          git remote set-url origin "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git push --force origin refs/heads/main:refs/heads/main
+          rm -rf /tmp/eldev-src
+          git clone /tmp/eldev.bundle /tmp/eldev-src
+          # Preserve this workflow file
+          mkdir -p /tmp/keep-workflows
+          cp -a .github/workflows/import-bundle.yml /tmp/keep-workflows/
+          # Replace working tree with bundle contents
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          shopt -s dotglob
+          cp -a /tmp/eldev-src/* .
+          mkdir -p .github/workflows
+          cp -a /tmp/keep-workflows/import-bundle.yml .github/workflows/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Import full ELDEV site from git bundle"
+          git push origin HEAD:main
