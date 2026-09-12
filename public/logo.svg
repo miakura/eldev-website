@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" fill="none" role="img" aria-label="ELDEV">
+  <rect x="0" y="2" width="44" height="44" rx="12" fill="#070b10" stroke="rgba(61,255,208,0.35)"/>
+  <circle cx="22" cy="24" r="8" stroke="#3dffd0" stroke-width="1.8"/>
+  <ellipse cx="22" cy="24" rx="15" ry="5.8" stroke="#ffc857" stroke-width="1.3" transform="rotate(-28 22 24)"/>
+  <path d="M16.2 16.8h11.2v2.3H19.3v3.1h7.1v2.1H19.3v5.1h8.1v2.3H16.2V16.8Z" fill="#f4fbf8"/>
+  <text x="56" y="33" fill="#f4fbf8" font-family="Syne, Manrope, Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="-1.2">ELDEV</text>
+</svg>

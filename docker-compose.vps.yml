@@ -1,0 +1,18 @@
+services:
+  web:
+    build: .
+    container_name: eldev-website
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8088:3000"
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATA_DIR: /app/data
+    volumes:
+      - eldev_data:/app/data
+
+volumes:
+  eldev_data:
