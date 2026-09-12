@@ -23,31 +23,17 @@ jobs:
         run: |
           set -euxo pipefail
           curl -fsSL -o /tmp/eldev.bundle "$BUNDLE_URL"
-          ls -lh /tmp/eldev.bundle
           git bundle verify /tmp/eldev.bundle
           rm -rf /tmp/eldev-src
           git clone --branch main /tmp/eldev.bundle /tmp/eldev-src
-          test -f /tmp/eldev-src/package.json
-          ls /tmp/eldev-src | head
+          echo "bundle_files=$(find /tmp/eldev-src -type f ! -path '*/.git/*' | wc -l)" | tee /tmp/import-debug.txt
+          test -f /tmp/eldev-src/admin/admin.js
+          test -f /tmp/eldev-src/server/index.mjs
           rm -rf /tmp/keep-github
-          mkdir -p /tmp/keep-github
-          if [ -d .github ]; then cp -a .github /tmp/keep-github/; fi
+          cp -a .github /tmp/keep-github
           find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
-          shopt -s dotglob nullglob
-          cp -a /tmp/eldev-src/* .
-          mkdir -p .github
-          if [ -d /tmp/keep-github/.github ]; then cp -a /tmp/keep-github/.github/. .github/; fi
-          test -f package.json
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git restore --staged .github/workflows 2>/dev/null || true
-          git checkout -- .github/workflows 2>/dev/null || true
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
-            git status
-            exit 0
-          fi
-          git status --short | head -50
-          git commit -m "Import full ELDEV site from git bundle"
-          git push origin HEAD:main
+          # Copy without relying on shell globbing
+          cp -a /tmp/eldev-src/. .
+          rm -rf .git
+          mv /tmp/keep-github-git .git 2>/dev/null || true
+          # Restore the original .git from checkout - ABOVE wiped it if we copied .git from src!
