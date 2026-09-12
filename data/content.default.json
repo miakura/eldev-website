@@ -1,0 +1,325 @@
+{
+  "seo": {
+    "title": "ELDEV — full-stack разработка на Python и Go · сайты, боты, 3D",
+    "description": "Разработка сайтов, лендингов, Telegram-ботов и 3D/WebGL. Full-stack на Python и Go. 5+ лет, 50+ кейсов.",
+    "ogImage": "/og/og-cover.png?v=20260912desc2",
+    "verificationGoogle": "",
+    "verificationYandex": "",
+    "keywords": "написание сайтов, разработка сайтов, telegram bot, 3д сайты, WebGL, Python, Go"
+  },
+  "hero": {
+    "availability": "Открыт к проектам · Full-stack",
+    "headlineBefore": "Сайт как",
+    "headlineAccent": "3D-модель",
+    "headlineAfter": "— full-stack на Python и Go",
+    "lead": "5+ лет · 50+ кейсов · разработка сайтов · Telegram-боты · 3D/WebGL · Python · Go · production в международной компании.",
+    "ctaPrimary": "Обсудить задачу",
+    "ctaSecondary": "К реальным проектам",
+    "eyebrow": "3D-first portfolio",
+    "hint": "Двигайте курсор · листайте — сцена отвечает"
+  },
+  "stats": [
+    {
+      "value": "5+",
+      "label": "лет опыта"
+    },
+    {
+      "value": "50+",
+      "label": "кейсов"
+    },
+    {
+      "value": "INTL",
+      "label": "foreign company"
+    },
+    {
+      "value": "PY/GO",
+      "label": "full-stack"
+    }
+  ],
+  "experience": [
+    {
+      "value": "5+",
+      "text": "лет web-разработки"
+    },
+    {
+      "value": "50+",
+      "text": "успешных проектов"
+    },
+    {
+      "value": "INTL",
+      "text": "работа в международной компании"
+    },
+    {
+      "value": "PY/GO",
+      "text": "full-stack Python и Go"
+    }
+  ],
+  "about": {
+    "name": "ELDEV",
+    "title": "Full-stack разработчик: Python, Go и 3D UI",
+    "paragraphs": [
+      "Делаю сайты, Telegram-ботов и interactive/WebGL-интерфейсы. Backend на Python и Go, frontend с сильной визуальной подачей.",
+      "5+ лет в разработке, 50+ кейсов, работаю в международной компании. Беру задачи от лендинга до сервиса с API и админкой."
+    ],
+    "photo": "/photos/about-portrait.webp",
+    "eyebrow": "About"
+  },
+  "services": [
+    {
+      "id": "sites",
+      "title": "Разработка сайтов",
+      "blurb": "Лендинги, корпоративные и продуктовые сайты: структура, вёрстка, frontend и запуск. Упор на скорость, адаптив и конверсию.",
+      "keywords": "написание сайтов, создание сайтов, разработка сайтов",
+      "kind": "core",
+      "price": "от 50 000 ₽"
+    },
+    {
+      "id": "telegram-bots",
+      "title": "Telegram-боты",
+      "blurb": "Боты для заявок, каталогов, уведомлений и внутренних процессов. Интеграции с API, CRM и оплатами на Python/Go.",
+      "keywords": "разработка телеграм ботов, telegram bot",
+      "kind": "core",
+      "price": "от 15 000 ₽"
+    },
+    {
+      "id": "3d-sites",
+      "title": "3D / WebGL сайты",
+      "blurb": "Интерактивные 3D-сцены и WebGL-акценты для hero и продукта — лёгкие, плавные, без перегруза мобильных устройств.",
+      "keywords": "3д сайты, WebGL, three.js сайты",
+      "kind": "core"
+    },
+    {
+      "id": "promo",
+      "title": "Продвижение",
+      "blurb": "SEO-структура, контент и технические правки, чтобы сайт лучше находили по рабочим запросам — без обещаний «гарантированного топа».",
+      "keywords": "продвижение сайтов, SEO",
+      "kind": "offer"
+    },
+    {
+      "id": "rework",
+      "title": "Доработка",
+      "blurb": "Допилю существующий сайт: скорость, адаптив, формы, админку, интеграции и аккуратный рефакторинг без полной пересборки.",
+      "keywords": "доработка сайтов, поддержка сайта",
+      "kind": "offer"
+    },
+    {
+      "id": "rebrand",
+      "title": "Ребрендинг",
+      "blurb": "Обновлю визуальный язык и подачу: типографика, композиция, motion/3D-акценты — чтобы продукт выглядел свежее и дороже.",
+      "keywords": "ребрендинг сайта, редизайн",
+      "kind": "offer"
+    },
+    {
+      "id": "maintenance",
+      "title": "Поддержка после запуска",
+      "blurb": "Сопровождение сайта после написания: правки, обновления, мониторинг, мелкий функционал и спокойная эксплуатация без сюрпризов.",
+      "keywords": "поддержка сайта, сопровождение сайта, обслуживание сайта",
+      "kind": "offer",
+      "price": "7 000 ₽ / мес",
+      "priceNote": "от 3 месяцев"
+    }
+  ],
+  "projects": [
+    {
+      "id": "epasha",
+      "title": "Стандарт-Упак",
+      "slug": "epasha",
+      "category": "B2B · Упаковка",
+      "shortDescription": "Каталог и витрина упаковочных материалов для бизнеса: поставки по России с 2015 года.",
+      "implemented": "Каталог товаров, карточки позиций, коммерческая структура и адаптивная витрина.",
+      "how": "Сверстан и собран продающий frontend с акцентом на ассортимент и быстрый путь к заявке.",
+      "images": [
+        "/photos/projects/epasha-desktop.webp"
+      ],
+      "url": "https://e-pasha.ru/",
+      "featured": true,
+      "accent": "#3dffd0"
+    },
+    {
+      "id": "fox64",
+      "title": "English Fox",
+      "slug": "fox64",
+      "category": "Education · Саратов",
+      "shortDescription": "Сайт курсов английского в Саратове: направления, запись и подача школы.",
+      "implemented": "Лендинг школы, блоки направлений и понятный CTA на запись.",
+      "how": "Собран лёгкий маркетинговый сайт с чистой иерархией и мобильной подачей.",
+      "images": [
+        "/photos/projects/fox64-desktop.webp"
+      ],
+      "url": "https://fox64.ru/",
+      "featured": true,
+      "accent": "#ffc857"
+    },
+    {
+      "id": "gastrodvor",
+      "title": "Гастродвор",
+      "slug": "gastrodvor",
+      "category": "Food mall · Саратов",
+      "shortDescription": "Фудмолл с открытыми фудкортами и разными кухнями — витрина гастромаркета в Саратове.",
+      "implemented": "Витрина фудмолла, блоки кухонь/ресторанов и контентная подача локации.",
+      "how": "Сверстан атмосферный frontend под food-медиа и быстрый просмотр точек.",
+      "images": [
+        "/photos/projects/gastrodvor-desktop.webp"
+      ],
+      "url": "https://gastrodvor64.ru/",
+      "featured": true,
+      "accent": "#ff7a59"
+    },
+    {
+      "id": "nova-paradise",
+      "title": "Нова Парадайз",
+      "slug": "nova-paradise",
+      "category": "Leisure · Комплекс",
+      "shortDescription": "Сайт комплекса отдыха: бассейны, детская зона, шезлонги, бар и сезонное предложение.",
+      "implemented": "Презентация комплекса, услуг и сезонного статуса с контактами.",
+      "how": "Собран сайт-витрина с акцентом на зоны отдыха и понятный контактный блок.",
+      "images": [
+        "/photos/projects/nova-paradise-desktop.webp"
+      ],
+      "url": "https://nova-paradise.ru/",
+      "featured": true,
+      "accent": "#7af0d4"
+    },
+    {
+      "id": "kaifuso",
+      "title": "Kaifuso",
+      "slug": "kaifuso",
+      "category": "Restaurant · Москва",
+      "shortDescription": "Азиатский ресторан-клуб на Кузнецком мосту: кухня, афиша, атмосфера и бронирование.",
+      "implemented": "Витрина ресторана-клуба, афиша/меню-логика и блок бронирования.",
+      "how": "Собран премиальный frontend с сильной атмосферой и ясным CTA.",
+      "images": [
+        "/photos/projects/kaifuso-desktop.webp"
+      ],
+      "url": "https://kaifuso.rest/",
+      "featured": true,
+      "accent": "#c4a0ff"
+    },
+    {
+      "id": "quickresto",
+      "title": "Quick Resto",
+      "slug": "quickresto",
+      "category": "SaaS · Автоматизация",
+      "shortDescription": "Система автоматизации общепита: онлайн-касса, склад, CRM, доставка и приложение.",
+      "implemented": "Продуктовый сайт SaaS: оффер, решения, сценарии для HoReCa.",
+      "how": "Собран плотный product-marketing frontend под B2B-конверсию.",
+      "images": [
+        "/photos/projects/quickresto-desktop.webp"
+      ],
+      "url": "https://quickresto.ru/",
+      "featured": true,
+      "accent": "#5b8cff"
+    }
+  ],
+  "contact": {
+    "title": "Нужен сайт, бот или 3D-интерфейс — напишите",
+    "text": "Коротко опишите задачу в Telegram или позвоните. Отвечаю по срокам, стеку и формату работы.",
+    "ctaLabel": "Написать в Telegram"
+  },
+  "contacts": {
+    "telegramUrl": "https://t.me/pashaevel",
+    "telegramHandle": "@pashaevel",
+    "phoneDisplay": "+7 937 265-62-00",
+    "phoneHref": "tel:+79372656200"
+  },
+  "footer": {
+    "left": "© 2026 ELDEV · сайты · боты · 3D",
+    "availability": "Available for new projects"
+  },
+  "photos": {
+    "heroPortrait": "",
+    "aboutPrimary": "/photos/about-portrait.webp",
+    "aboutSecondary": "",
+    "projects": {
+      "epasha": "/photos/projects/epasha-desktop.webp",
+      "fox64": "/photos/projects/fox64-desktop.webp",
+      "gastrodvor": "/photos/projects/gastrodvor-desktop.webp",
+      "nova-paradise": "/photos/projects/nova-paradise-desktop.webp",
+      "kaifuso": "/photos/projects/kaifuso-desktop.webp",
+      "quickresto": "/photos/projects/quickresto-desktop.webp"
+    }
+  },
+  "installmentCallout": {
+    "kicker": "Рассрочка",
+    "title": "6 месяцев",
+    "text": "Ежемесячный платёж за сайт или бота можно разбить на полгода."
+  },
+  "branding": {
+    "marquee": "ELDEV",
+    "logoText": "EL",
+    "logoAccent": "DEV",
+    "logoUrl": "/logo.svg"
+  },
+  "sections": {
+    "servicesEyebrow": "Services",
+    "servicesTitle": "Услуги разработки",
+    "servicesLead": "Написание сайтов — от 50 000 ₽, Telegram-боты — от 15 000 ₽. Также 3D/WebGL и сопровождение после запуска.",
+    "projectsEyebrow": "Projects",
+    "projectsTitle": "Реальные кейсы",
+    "projectsLead": "Шесть боевых сайтов в продакшене. Превью и описание — без перехода на внешние URL.",
+    "contactEyebrow": "Contact"
+  },
+  "offersStrip": {
+    "kicker": "Также беру",
+    "title": "Продвижение · доработка · ребрендинг · поддержка",
+    "lead": "Если сайт уже есть — усилю трафик, допишу функциональность, обновлю визуальный язык или возьму на сопровождение: от 3 месяцев, 7 000 ₽ в месяц."
+  },
+  "capabilities": [
+    {
+      "title": "Python",
+      "text": "Backend и сервисы на Python: API, интеграции, бизнес-логика."
+    },
+    {
+      "title": "Go",
+      "text": "Сетевые и высоконагруженные сервисы на Go."
+    },
+    {
+      "title": "Frontend",
+      "text": "React/TypeScript интерфейсы с сильным UX."
+    },
+    {
+      "title": "3D / WebGL",
+      "text": "Точечный motion и лёгкий WebGL без перегруза."
+    },
+    {
+      "title": "Full-stack",
+      "text": "Связка frontend + API end-to-end до деплоя."
+    },
+    {
+      "title": "Performance",
+      "text": "Скорость интерфейса и адекватная нагрузка на backend."
+    }
+  ],
+  "process": [
+    {
+      "num": "01",
+      "title": "Анализ",
+      "text": "Задача, аудитория, ограничения и метрики."
+    },
+    {
+      "num": "02",
+      "title": "Структура",
+      "text": "Архитектура, сценарии и ключевые экраны."
+    },
+    {
+      "num": "03",
+      "title": "Development",
+      "text": "Вёрстка и разработка на современном стеке."
+    },
+    {
+      "num": "04",
+      "title": "Launch",
+      "text": "Публикация, доступы и поддержка после релиза."
+    }
+  ],
+  "stack": [
+    "Python",
+    "Go",
+    "TypeScript",
+    "React",
+    "Three.js",
+    "PostgreSQL",
+    "Docker",
+    "Vite"
+  ]
+}
