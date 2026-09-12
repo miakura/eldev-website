@@ -1,0 +1,28 @@
+{
+  "name": "eldev-website",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "materialize-assets": "node scripts/materialize-assets.mjs",
+    "predev": "node scripts/materialize-assets.mjs",
+    "prebuild": "node scripts/materialize-assets.mjs",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "start": "node server/index.mjs",
+    "dev:server": "node server/index.mjs"
+  },
+  "devDependencies": {
+    "@types/three": "^0.186.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "three": "^0.186.0",
+    "express": "^5.1.0",
+    "multer": "^2.0.2",
+    "cookie-parser": "^1.4.7"
+  }
+}
