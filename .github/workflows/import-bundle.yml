@@ -1,0 +1,27 @@
+name: Import git bundle
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/import-bundle.yml"
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download bundle and force-push main
+        env:
+          BUNDLE_URL: https://tmpfiles.org/dl/1789220641.43d0a9d1d3e2081f/w6wkPvLBWdjN/eldev-full.bundle.txt
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          curl -fsSL -o /tmp/eldev.bundle "$BUNDLE_URL"
+          git bundle verify /tmp/eldev.bundle
+          rm -rf /tmp/eldev-mirror
+          git clone --mirror /tmp/eldev.bundle /tmp/eldev-mirror
+          cd /tmp/eldev-mirror
+          git remote set-url origin "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push --force origin refs/heads/main:refs/heads/main
