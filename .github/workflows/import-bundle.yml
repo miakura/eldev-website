@@ -26,14 +26,29 @@ jobs:
           git bundle verify /tmp/eldev.bundle
           rm -rf /tmp/eldev-src
           git clone --branch main /tmp/eldev.bundle /tmp/eldev-src
-          echo "bundle_files=$(find /tmp/eldev-src -type f ! -path '*/.git/*' | wc -l)" | tee /tmp/import-debug.txt
           test -f /tmp/eldev-src/admin/admin.js
           test -f /tmp/eldev-src/server/index.mjs
-          rm -rf /tmp/keep-github
           cp -a .github /tmp/keep-github
           find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
-          # Copy without relying on shell globbing
-          cp -a /tmp/eldev-src/. .
-          rm -rf .git
-          mv /tmp/keep-github-git .git 2>/dev/null || true
-          # Restore the original .git from checkout - ABOVE wiped it if we copied .git from src!
+          # Do NOT copy .git from the bundle (would replace checkout remotes/index)
+          rsync -a --delete --exclude '.git' --exclude '.github/workflows' /tmp/eldev-src/ ./
+          mkdir -p .github
+          rsync -a /tmp/keep-github/ .github/
+          test -f admin/admin.js
+          test -f server/index.mjs
+          test -f package.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          # Never stage workflow changes (GITHUB_TOKEN cannot update workflows)
+          git restore --staged .github/workflows || true
+          git checkout -- .github/workflows || true
+          echo "Staged files: $(git diff --cached --name-only | wc -l)"
+          git diff --cached --name-only | head -40
+          if git diff --cached --quiet; then
+            echo "No changes to commit (unexpected)"
+            git status
+            exit 1
+          fi
+          git commit -m "Import full ELDEV site from git bundle"
+          git push origin HEAD:main
