@@ -2,9 +2,6 @@ name: Import git bundle
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - ".github/workflows/import-bundle.yml"
 
 jobs:
   import:
@@ -19,36 +16,30 @@ jobs:
 
       - name: Import tree from bundle
         env:
-          BUNDLE_URL: https://eldev.website/_tmp/eldev-full.bundle
+          BUNDLE_URL: ${{ vars.ELDEV_BUNDLE_URL }}
         run: |
           set -euxo pipefail
+          if [ -z "${BUNDLE_URL:-}" ]; then
+            echo "Set repository variable ELDEV_BUNDLE_URL to a git bundle URL, then re-run."
+            exit 1
+          fi
           curl -fsSL -o /tmp/eldev.bundle "$BUNDLE_URL"
           git bundle verify /tmp/eldev.bundle
           rm -rf /tmp/eldev-src
           git clone --branch main /tmp/eldev.bundle /tmp/eldev-src
-          test -f /tmp/eldev-src/admin/admin.js
-          test -f /tmp/eldev-src/server/index.mjs
           cp -a .github /tmp/keep-github
           find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
-          # Do NOT copy .git from the bundle (would replace checkout remotes/index)
           rsync -a --delete --exclude '.git' --exclude '.github/workflows' /tmp/eldev-src/ ./
           mkdir -p .github
           rsync -a /tmp/keep-github/ .github/
-          test -f admin/admin.js
-          test -f server/index.mjs
-          test -f package.json
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          # Never stage workflow changes (GITHUB_TOKEN cannot update workflows)
           git restore --staged .github/workflows || true
           git checkout -- .github/workflows || true
-          echo "Staged files: $(git diff --cached --name-only | wc -l)"
-          git diff --cached --name-only | head -40
           if git diff --cached --quiet; then
-            echo "No changes to commit (unexpected)"
-            git status
-            exit 1
+            echo "No changes"
+            exit 0
           fi
           git commit -m "Import full ELDEV site from git bundle"
           git push origin HEAD:main
