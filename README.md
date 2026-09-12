@@ -31,7 +31,7 @@ Static photos under `public/` are stored as base64 in `asset-blobs/` and written
 
 ## SEO
 
-On-site SEO for intents «написание сайтов», «разработка телеграм ботов», «зд сайты» — title/description/OG, services block, JSON-LD, robots/sitemap. No ranking guarantees.
+On-site SEO for intents «написание сайтов», «разработка телеграм ботов», «3д сайты» — title/description/OG, services block, JSON-LD, robots/sitemap. No ranking guarantees.
 
 ## Deploy
 
