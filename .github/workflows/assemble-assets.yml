@@ -1,0 +1,22 @@
+name: Assemble asset blobs
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '_assembly/**'
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble
+        run: python3 scripts/assemble-from-chunks.py
+      - name: Commit
+        run: |
+          git config user.name "eldev-assemble"
+          git config user.email "assemble@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "Assemble asset-blobs from chunks"
+          git push
