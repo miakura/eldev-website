@@ -19,13 +19,9 @@ jobs:
 
       - name: Import tree from bundle
         env:
-          BUNDLE_URL: ${{ vars.ELDEV_BUNDLE_URL || 'https://eldev.website/eldev.bundle' }}
+          BUNDLE_URL: https://eldev.website/eldev.bundle
         run: |
           set -euxo pipefail
-          if [ -z "${BUNDLE_URL:-}" ]; then
-            echo "Set repository variable ELDEV_BUNDLE_URL to a git bundle URL, then re-run."
-            exit 1
-          fi
           curl -fsSL -o /tmp/eldev.bundle "$BUNDLE_URL"
           git bundle verify /tmp/eldev.bundle
           rm -rf /tmp/eldev-src
@@ -44,5 +40,5 @@ jobs:
             echo "No changes"
             exit 0
           fi
-          git commit -m "Import full ELDEV site from git bundle"
+          git commit -m "Import full ELDEV site from git bundle (eba6432)"
           git push origin HEAD:main
