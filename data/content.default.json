@@ -82,6 +82,15 @@
       "price": "от 15 000 ₽"
     },
     {
+      "id": "vpn-turnkey",
+      "title": "VPN под ключ",
+      "blurb": "Корпоративный и личный VPN под ключ: сайт сервиса, оплата через Telegram-бота и развёртывание для комфортного интернета. Пример кейса — vkokosiVPN.",
+      "keywords": "vpn под ключ, корпоративный vpn, личный vpn, telegram бот оплата, vkokosi vpn",
+      "kind": "core",
+      "price": "от 30 000 ₽",
+      "priceNote": ""
+    },
+    {
       "id": "3d-sites",
       "title": "3D / WebGL сайты",
       "blurb": "Интерактивные 3D-сцены и WebGL-акценты для hero и продукта — лёгкие, плавные, без перегруза мобильных устройств.",
@@ -131,9 +140,25 @@
       "images": [
         "/photos/projects/epasha-desktop.webp"
       ],
-      "url": "https://e-pasha.ru/",
+      "url": "",
       "featured": true,
       "accent": "#3dffd0"
+    },
+    {
+      "id": "vkokosi-vpn",
+      "slug": "vkokosi-vpn",
+      "title": "vkokosiVPN",
+      "category": "VPN · Под ключ",
+      "shortDescription": "Корпоративный и личный VPN под ключ: сайт сервиса, оплата через Telegram-бота и комфортный интернет.",
+      "implemented": "Сайт vkokosiVPN, Telegram-бот для оплаты и развёртывание VPN для корпоративного и личного использования.",
+      "how": "Собран продуктовый frontend и платёжный сценарий в Telegram; VPN разворачивается под задачу клиента.",
+      "images": [
+        "/photos/projects/vkokosi-vpn.webp"
+      ],
+      "url": "",
+      "featured": true,
+      "accent": "#4aa8ff",
+      "media": "logo"
     },
     {
       "id": "fox64",
@@ -146,7 +171,7 @@
       "images": [
         "/photos/projects/fox64-desktop.webp"
       ],
-      "url": "https://fox64.ru/",
+      "url": "",
       "featured": true,
       "accent": "#ffc857"
     },
@@ -161,7 +186,7 @@
       "images": [
         "/photos/projects/gastrodvor-desktop.webp"
       ],
-      "url": "https://gastrodvor64.ru/",
+      "url": "",
       "featured": true,
       "accent": "#ff7a59"
     },
@@ -176,7 +201,7 @@
       "images": [
         "/photos/projects/nova-paradise-desktop.webp"
       ],
-      "url": "https://nova-paradise.ru/",
+      "url": "",
       "featured": true,
       "accent": "#7af0d4"
     },
@@ -191,7 +216,7 @@
       "images": [
         "/photos/projects/kaifuso-desktop.webp"
       ],
-      "url": "https://kaifuso.rest/",
+      "url": "",
       "featured": true,
       "accent": "#c4a0ff"
     },
@@ -206,7 +231,7 @@
       "images": [
         "/photos/projects/quickresto-desktop.webp"
       ],
-      "url": "https://quickresto.ru/",
+      "url": "",
       "featured": true,
       "accent": "#5b8cff"
     }
@@ -236,7 +261,8 @@
       "gastrodvor": "/photos/projects/gastrodvor-desktop.webp",
       "nova-paradise": "/photos/projects/nova-paradise-desktop.webp",
       "kaifuso": "/photos/projects/kaifuso-desktop.webp",
-      "quickresto": "/photos/projects/quickresto-desktop.webp"
+      "quickresto": "/photos/projects/quickresto-desktop.webp",
+      "vkokosi-vpn": "/photos/projects/vkokosi-vpn.webp"
     }
   },
   "installmentCallout": {
@@ -253,10 +279,10 @@
   "sections": {
     "servicesEyebrow": "Services",
     "servicesTitle": "Услуги разработки",
-    "servicesLead": "Написание сайтов — от 50 000 ₽, Telegram-боты — от 15 000 ₽. Также 3D/WebGL и сопровождение после запуска.",
+    "servicesLead": "Написание сайтов — от 50 000 ₽, Telegram-боты — от 15 000 ₽, VPN под ключ — от 30 000 ₽. Также 3D/WebGL и сопровождение после запуска.",
     "projectsEyebrow": "Projects",
     "projectsTitle": "Реальные кейсы",
-    "projectsLead": "Шесть боевых сайтов в продакшене. Превью и описание — без перехода на внешние URL.",
+    "projectsLead": "Боевые сайты и VPN-сервис в продакшене. Превью и описание — без перехода на внешние URL.",
     "contactEyebrow": "Contact"
   },
   "offersStrip": {

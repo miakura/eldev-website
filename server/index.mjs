@@ -39,6 +39,31 @@ function readDefaultContent() {
   return JSON.parse(fs.readFileSync(defaultPath, "utf8"));
 }
 
+function mergeById(defaults, overlay) {
+  const base = Array.isArray(defaults) ? defaults : [];
+  const over = Array.isArray(overlay) ? overlay : [];
+  if (!base.length) {
+    return over;
+  }
+  if (!over.length) {
+    return base;
+  }
+  const overrides = new Map(over.map((item) => [item.id, item]));
+  const seen = new Set();
+  const out = [];
+  for (const item of base) {
+    const patch = overrides.get(item.id);
+    out.push(patch ? { ...item, ...patch } : item);
+    seen.add(item.id);
+  }
+  for (const item of over) {
+    if (!seen.has(item.id)) {
+      out.push(item);
+    }
+  }
+  return out;
+}
+
 function readContent() {
   if (!fs.existsSync(contentPath)) {
     const defaults = readDefaultContent();
@@ -68,10 +93,8 @@ function readContent() {
       Array.isArray(content.experience) && content.experience.length
         ? content.experience
         : defaults.experience,
-    services:
-      Array.isArray(content.services) && content.services.length ? content.services : defaults.services,
-    projects:
-      Array.isArray(content.projects) && content.projects.length ? content.projects : defaults.projects,
+    services: mergeById(defaults.services, content.services),
+    projects: mergeById(defaults.projects, content.projects),
     photos: {
       ...(defaults.photos || {}),
       ...(content.photos || {}),

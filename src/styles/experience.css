@@ -690,6 +690,73 @@ body.reduced-3d .world-canvas {
   transform: scale(1.03);
 }
 
+.case-card-logo {
+  border-color: color-mix(in srgb, var(--case-accent, #4aa8ff) 32%, var(--border));
+  background:
+    linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--case-accent, #4aa8ff) 12%, transparent),
+      rgba(255, 255, 255, 0.025) 48%
+    );
+}
+
+.case-media-logo {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      color-mix(in srgb, var(--case-accent, #4aa8ff) 36%, transparent),
+      transparent 54%
+    ),
+    radial-gradient(circle at 82% 16%, rgba(168, 85, 247, 0.2), transparent 42%),
+    #05070d;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--case-accent, #4aa8ff) 24%, transparent);
+}
+
+.case-media-logo img {
+  width: min(78%, 280px);
+  height: auto;
+  max-height: 78%;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 30px rgba(74, 168, 255, 0.3));
+}
+
+.case-card-logo:hover .case-media-logo img {
+  transform: scale(1.04) translateY(-2px);
+}
+
+.case-topline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.case-price {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--case-accent, #4aa8ff) 46%, rgba(255, 255, 255, 0.12));
+  background: color-mix(in srgb, var(--case-accent, #4aa8ff) 18%, rgba(8, 10, 16, 0.75));
+  color: #eef6ff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.case-url {
+  margin: 0;
+  color: color-mix(in srgb, var(--case-accent, #4aa8ff) 70%, #dce9ff);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
 .case-body {
   display: grid;
   gap: 4px;

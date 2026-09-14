@@ -182,6 +182,15 @@ function renderProjects(projects) {
           <label>Category<input data-project="category" value="${escapeAttr(project.category || "")}" /></label>
           <label>Accent<input data-project="accent" value="${escapeAttr(project.accent || ACCENTS[index % ACCENTS.length])}" /></label>
         </div>
+        <div class="row">
+          <label>Цена<input data-project="price" value="${escapeAttr(project.price || "")}" placeholder="от 30 000 ₽" /></label>
+          <label>Media
+            <select data-project="media">
+              <option value="shot" ${(project.media || "shot") !== "logo" ? "selected" : ""}>screenshot</option>
+              <option value="logo" ${project.media === "logo" ? "selected" : ""}>logo</option>
+            </select>
+          </label>
+        </div>
         <label>Short description<textarea data-project="shortDescription" rows="2">${escapeHtml(project.shortDescription || "")}</textarea></label>
         <label>Реализовано<textarea data-project="implemented" rows="2">${escapeHtml(project.implemented || "")}</textarea></label>
         <label>Как<textarea data-project="how" rows="2">${escapeHtml(project.how || "")}</textarea></label>
@@ -254,6 +263,8 @@ function readProjects() {
       url: card.querySelector('[data-project="url"]')?.value.trim() || "",
       featured: Boolean(card.querySelector('[data-project="featured"]')?.checked),
       accent: card.querySelector('[data-project="accent"]')?.value.trim() || ACCENTS[index % ACCENTS.length],
+      price: card.querySelector('[data-project="price"]')?.value.trim() || "",
+      media: card.querySelector('[data-project="media"]')?.value.trim() || "shot",
     };
   });
 }
@@ -591,6 +602,8 @@ document.getElementById("addProjectBtn").addEventListener("click", () => {
     url: "",
     featured: true,
     accent: ACCENTS[list.length % ACCENTS.length],
+    price: "",
+    media: "shot",
   });
   content.projects = list;
   renderProjects(list);

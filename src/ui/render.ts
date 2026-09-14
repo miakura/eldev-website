@@ -14,6 +14,7 @@ function escapeHtml(value: string): string {
 
 function renderCase(project: ProjectCase, index: number): string {
   const images = (project.images || []).filter(Boolean).slice(0, 3);
+  const isLogo = project.media === "logo";
   const gallery =
     images.length > 0
       ? images
@@ -23,12 +24,21 @@ function renderCase(project: ProjectCase, index: number): string {
           )
           .join("")
       : `<img src="" alt="" loading="lazy" decoding="async" />`;
+  const mediaClass = [
+    "case-media",
+    images.length > 1 ? "case-media-multi" : "",
+    isLogo ? "case-media-logo" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return `
-  <article class="case-card reveal" style="--case-accent:${escapeHtml(project.accent || "#3dffd0")}" data-index="${index}" data-project-slug="${escapeHtml(project.slug)}">
-    <div class="case-media${images.length > 1 ? " case-media-multi" : ""}">${gallery}</div>
+  <article class="case-card${isLogo ? " case-card-logo" : ""} reveal" style="--case-accent:${escapeHtml(project.accent || "#3dffd0")}" data-index="${index}" data-project-slug="${escapeHtml(project.slug)}">
+    <div class="${mediaClass}">${gallery}</div>
     <div class="case-body">
-      <span class="case-category">${escapeHtml(project.category)}</span>
+      <div class="case-topline">
+        <span class="case-category">${escapeHtml(project.category)}</span>
+      </div>
       <h3>${escapeHtml(project.title)}</h3>
       <p>${escapeHtml(project.shortDescription)}</p>
       ${

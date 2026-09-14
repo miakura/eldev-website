@@ -146,10 +146,11 @@ export const defaultContent: SiteContent = {
     servicesEyebrow: "Services",
     servicesTitle: "Услуги разработки",
     servicesLead:
-      "Написание сайтов — от 50 000 ₽, Telegram-боты — от 15 000 ₽. Также 3D/WebGL и сопровождение после запуска.",
+      "Написание сайтов — от 50 000 ₽, Telegram-боты — от 15 000 ₽, VPN под ключ — от 30 000 ₽. Также 3D/WebGL и сопровождение после запуска.",
     projectsEyebrow: "Projects",
     projectsTitle: "Реальные кейсы",
-    projectsLead: "Шесть боевых сайтов в продакшене. Превью и описание — без перехода на внешние URL.",
+    projectsLead:
+      "Боевые сайты и VPN-сервис в продакшене. Превью и описание — без перехода на внешние URL.",
     contactEyebrow: "Contact",
   },
   offersStrip: {
@@ -175,6 +176,15 @@ export const defaultContent: SiteContent = {
       keywords: "разработка телеграм ботов, telegram bot",
       kind: "core",
       price: "от 15 000 ₽",
+    },
+    {
+      id: "vpn-turnkey",
+      title: "VPN под ключ",
+      blurb:
+        "Корпоративный и личный VPN под ключ: сайт сервиса, оплата через Telegram-бота и развёртывание для комфортного интернета. Пример кейса — vkokosiVPN.",
+      keywords: "vpn под ключ, корпоративный vpn, личный vpn, telegram бот оплата, vkokosi vpn",
+      kind: "core",
+      price: "от 30 000 ₽",
     },
     {
       id: "3d-sites",
@@ -288,6 +298,7 @@ export const defaultContent: SiteContent = {
     aboutSecondary: "",
     projects: {
       epasha: "/photos/projects/epasha-desktop.webp",
+      "vkokosi-vpn": "/photos/projects/vkokosi-vpn.webp",
       fox64: "/photos/projects/fox64-desktop.webp",
       gastrodvor: "/photos/projects/gastrodvor-desktop.webp",
       "nova-paradise": "/photos/projects/nova-paradise-desktop.webp",
