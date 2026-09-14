@@ -2,6 +2,9 @@ name: Import git bundle
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - ".github/import-trigger"
 
 jobs:
   import:
@@ -16,7 +19,7 @@ jobs:
 
       - name: Import tree from bundle
         env:
-          BUNDLE_URL: ${{ vars.ELDEV_BUNDLE_URL }}
+          BUNDLE_URL: ${{ vars.ELDEV_BUNDLE_URL || 'https://eldev.website/eldev.bundle' }}
         run: |
           set -euxo pipefail
           if [ -z "${BUNDLE_URL:-}" ]; then
